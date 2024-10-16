@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 
 class MainActivity : AppCompatActivity() {
     private lateinit var usernameExpected : String
@@ -28,8 +30,12 @@ class MainActivity : AppCompatActivity() {
 
         val correctCredentials = userName == usernameExpected && password == passwordExpected
 
+        //TODO: pass username via Bundle to add to TextView ("Welcome, $username")
         if (correctCredentials) {
             Toast.makeText( this, "logged in", Toast.LENGTH_SHORT).show()
+            val bundle = bundleOf(getString(R.string.username) to userName)
+            view.findNavController()
+                .navigate(R.id.action_loginFragment_to_userMenuFragment, bundle)
         } else {
             Toast.makeText( this, "invalid credentials", Toast.LENGTH_SHORT).show()
         }
