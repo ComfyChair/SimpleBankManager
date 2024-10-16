@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import java.util.Locale
 
 class ViewBalanceFragment: Fragment(R.layout.view_balance_fragment) {
 
