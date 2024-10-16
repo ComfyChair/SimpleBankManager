@@ -8,4 +8,6 @@
     <string name="transfer_funds">transfer funds</string>
     <string name="calculate_exchange">calculate exchange</string>
     <string name="pay_bills">pay bills</string>
+    <string name="balance">Balance:</string>
+    <string name="current_balance_key">currentBalance</string>
 </resources>
