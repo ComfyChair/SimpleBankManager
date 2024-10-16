@@ -13,6 +13,14 @@ class UserMenuFragment: Fragment(R.layout.user_menu_fragment) {
         super.onViewCreated(view, savedInstanceState)
         setWelcomeMessage(view)
         setViewBalanceNavigation(view)
+        setTransferFundsNavigation(view)
+    }
+
+    private fun setTransferFundsNavigation(view: View) {
+        val transferFundsBtn = view.findViewById<Button>(R.id.userMenuTransferFundsButton)
+        transferFundsBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_userMenuFragment_to_transferFundsFragment)
+        }
     }
 
     private fun setViewBalanceNavigation(view: View) {
