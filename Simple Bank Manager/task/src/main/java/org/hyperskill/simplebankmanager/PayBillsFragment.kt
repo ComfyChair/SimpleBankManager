@@ -5,7 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import androidx.appcompat.app.AlertDialog
+import android.widget.Toast
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import org.hyperskill.simplebankmanager.ExtensionUtil.format
 
@@ -51,12 +52,31 @@ class PayBillsFragment : Fragment(R.layout.pay_bills_fragment) {
                     billInfo.third.format(2)
                 ))
             .setPositiveButton(getString(R.string.confirm)) { _, _ ->
-                //TODO: Pay Bill
+                payBill(view, billInfo)
             }
             .setNegativeButton(getString(R.string.cancel)){ _, _ ->
-                //nothing
+                // just close
             }
             .show()
+    }
+
+    private fun payBill(view: View, billInfo: Triple<String, String, Double>) {
+        val amount = billInfo.third
+        if (amount <= BankAccount.currentBalance) {
+            BankAccount.currentBalance -= amount
+            Toast.makeText(view.context,
+                getString(R.string.payment_success_msg, billInfo.first),
+                Toast.LENGTH_SHORT)
+                .show()
+        } else {
+            AlertDialog.Builder(view.context)
+                .setTitle(getString(R.string.error))
+                .setMessage(getString(R.string.not_enough_funds))
+                .setPositiveButton(R.string.ok) { _, _ ->
+                    // just close
+                }
+                .show()
+        }
     }
 
     private fun errorAlertDialog(view: View) {
@@ -64,7 +84,7 @@ class PayBillsFragment : Fragment(R.layout.pay_bills_fragment) {
             .setTitle(getString(R.string.error))
             .setMessage(getString(R.string.wrong_code))
             .setPositiveButton(getString(R.string.ok)) { _, _ ->
-                // nothing
+                // just close
             }
             .show()
     }

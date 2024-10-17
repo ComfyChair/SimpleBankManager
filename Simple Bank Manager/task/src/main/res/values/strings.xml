@@ -43,5 +43,7 @@
     <string name="bill_info">Bill info</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
-    <string name="bill_info_msg">Name: %1$s\nBillCode: %2$s\nAmount: %3$s$</string>
+    <string name="bill_info_msg">Name: %1$s\nBillCode: %2$s\nAmount: $%3$s</string>
+    <string name="payment_success_msg">Payment for bill %1$s, was successful</string>
+    <string name="not_enough_funds">Not enough funds</string>
 </resources>
