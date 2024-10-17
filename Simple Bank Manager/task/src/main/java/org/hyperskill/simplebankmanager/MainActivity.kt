@@ -13,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        BankAccount.currentBalance =
+            intent.extras?.getDouble(getString(R.string.balance_key)) ?: 100.0
     }
 
 }

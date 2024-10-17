@@ -10,7 +10,7 @@
         android:id="@+id/userMenuWelcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome"
+        android:text="@string/welcome_username"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:layout_marginStart="@dimen/margin_med"
         android:layout_marginEnd="@dimen/margin_med"
