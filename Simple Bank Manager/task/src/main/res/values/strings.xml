@@ -25,9 +25,23 @@
     <string name="convert_to">convert to</string>
     <string name="calculate">calculate</string>
     <string name="exchange_display_text">%1$s%2$s = %3$s%4$s</string>
+    <string name="same_currency_toast">Cannot convert to same currency</string>
     <string-array name="currencies">
         <item>EUR</item>
         <item>GBP</item>
         <item>USD</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="show_bill_info">Show bill info</string>
+    <string name="enter_code">Enter code</string>
+    <string name="exchange_map_key">exchangeMap</string>
+    <string name="bill_info_key">billInfo</string>
+    <string name="error">Error</string>
+    <string name="wrong_code">Wrong code</string>
+    <string name="ok">Ok</string>
+    <string name="bill_info">Bill info</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="bill_info_msg">Name: %1$s\nBillCode: %2$s\nAmount: %3$s$</string>
 </resources>

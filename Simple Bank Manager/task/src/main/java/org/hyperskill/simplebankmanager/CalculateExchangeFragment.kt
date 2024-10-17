@@ -22,10 +22,10 @@ class CalculateExchangeFragment : Fragment(R.layout.calculate_exchange_fragment)
         view!!.findViewById(R.id.calculateExchangeToSpinner)
     }
 
-    val exchangeMap: Map<String, Map<String, Double>> by lazy {
+    private val exchangeMap: Map<String, Map<String, Double>> by lazy {
         val intent = (view?.context as AppCompatActivity).intent
-        val serializableMap = intent.extras?.getSerializable("exchangeMap")
-        serializableMap as? Map<String, Map<String, Double>> ?: defaultMap
+        val serialized = intent.extras?.getSerializable(getString(R.string.exchange_map_key))
+        serialized as? Map<String, Map<String, Double>> ?: defaultMap
     }
 
     companion object {
@@ -119,7 +119,7 @@ class CalculateExchangeFragment : Fragment(R.layout.calculate_exchange_fragment)
     private fun sameCurrencyToast(parent: AdapterView<*>) {
         Toast.makeText(
             parent.context,
-            "Cannot convert to same currency",
+            getString(R.string.same_currency_toast),
             Toast.LENGTH_SHORT
         )
             .show()

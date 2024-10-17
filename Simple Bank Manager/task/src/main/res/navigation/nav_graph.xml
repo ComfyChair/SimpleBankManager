@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="org.hyperskill.simplebankmanager.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_loginFragment_to_userMenuFragment"
             app:destination="@id/userMenuFragment" />
@@ -16,7 +17,8 @@
     <fragment
         android:id="@+id/userMenuFragment"
         android:name="org.hyperskill.simplebankmanager.UserMenuFragment"
-        android:label="UserMenuFragment" >
+        android:label="UserMenuFragment"
+        tools:layout="@layout/user_menu_fragment">
         <action
             android:id="@+id/action_userMenuFragment_to_viewBalanceFragment"
             app:destination="@id/viewBalanceFragment" />
@@ -26,11 +28,15 @@
         <action
             android:id="@+id/action_userMenuFragment_to_calculateExchangeFragment"
             app:destination="@id/calculateExchangeFragment" />
+        <action
+            android:id="@+id/action_userMenuFragment_to_payBillsFragment"
+            app:destination="@id/payBillsFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewBalanceFragment"
         android:name="org.hyperskill.simplebankmanager.ViewBalanceFragment"
-        android:label="ViewBalanceFragment" />
+        android:label="ViewBalanceFragment"
+        tools:layout="@layout/view_balance_fragment" />
     <fragment
         android:id="@+id/transferFundsFragment"
         android:name="org.hyperskill.simplebankmanager.TransferFundsFragment"
@@ -41,4 +47,9 @@
         android:name="org.hyperskill.simplebankmanager.CalculateExchangeFragment"
         android:label="calculate_exchange_fragment"
         tools:layout="@layout/calculate_exchange_fragment" />
+    <fragment
+        android:id="@+id/payBillsFragment"
+        android:name="org.hyperskill.simplebankmanager.PayBillsFragment"
+        android:label="pay_bills_fragment"
+        tools:layout="@layout/pay_bills_fragment" />
 </navigation>

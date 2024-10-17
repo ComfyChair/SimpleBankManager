@@ -11,29 +11,28 @@ class UserMenuFragment: Fragment(R.layout.user_menu_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setWelcomeMessage(view)
-        setViewBalanceNavigation(view)
-        setTransferFundsNavigation(view)
-        setCalculateExchangeNavigation(view)
+        setOnClickListeners(view)
     }
 
-    private fun setCalculateExchangeNavigation(view: View) {
-        val calculateExchangeBtn = view.findViewById<Button>(R.id.userMenuExchangeCalculatorButton)
-        calculateExchangeBtn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_userMenuFragment_to_calculateExchangeFragment)
+    private fun setOnClickListeners(view: View) {
+        val viewBalanceBtn = view.findViewById<Button>(R.id.userMenuViewBalanceButton)
+        viewBalanceBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_userMenuFragment_to_viewBalanceFragment)
         }
-    }
 
-    private fun setTransferFundsNavigation(view: View) {
         val transferFundsBtn = view.findViewById<Button>(R.id.userMenuTransferFundsButton)
         transferFundsBtn.setOnClickListener {
             view.findNavController().navigate(R.id.action_userMenuFragment_to_transferFundsFragment)
         }
-    }
 
-    private fun setViewBalanceNavigation(view: View) {
-        val viewBalanceBtn = view.findViewById<Button>(R.id.userMenuViewBalanceButton)
-        viewBalanceBtn.setOnClickListener {
-            view.findNavController().navigate(R.id.action_userMenuFragment_to_viewBalanceFragment)
+        val calculateExchangeBtn = view.findViewById<Button>(R.id.userMenuExchangeCalculatorButton)
+        calculateExchangeBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_userMenuFragment_to_calculateExchangeFragment)
+        }
+
+        val payBillsBtn = view.findViewById<Button>(R.id.userMenuPayBillsButton)
+        payBillsBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_userMenuFragment_to_payBillsFragment)
         }
     }
 
