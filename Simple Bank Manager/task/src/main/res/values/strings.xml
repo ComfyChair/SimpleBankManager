@@ -24,6 +24,7 @@
     <string name="convert_from">convert from</string>
     <string name="convert_to">convert to</string>
     <string name="calculate">calculate</string>
+    <string name="exchange_display_text">%1$s%2$s = %3$s%4$s</string>
     <string-array name="currencies">
         <item>EUR</item>
         <item>GBP</item>
