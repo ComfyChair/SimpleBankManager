@@ -13,6 +13,14 @@ class UserMenuFragment: Fragment(R.layout.user_menu_fragment) {
         setWelcomeMessage(view)
         setViewBalanceNavigation(view)
         setTransferFundsNavigation(view)
+        setCalculateExchangeNavigation(view)
+    }
+
+    private fun setCalculateExchangeNavigation(view: View) {
+        val calculateExchangeBtn = view.findViewById<Button>(R.id.userMenuExchangeCalculatorButton)
+        calculateExchangeBtn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_userMenuFragment_to_calculateExchangeFragment)
+        }
     }
 
     private fun setTransferFundsNavigation(view: View) {
